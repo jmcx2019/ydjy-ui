@@ -15,7 +15,7 @@
           </a>
         </div>
 
-        <div>
+        <div class="navbar-custom">
           <ul class="nav navbar-nav">
 
             <li v-bind:class="[(clicked === clicked1 ) ? 'active' : '']"><a @click="toHomePage">首页</a></li>
@@ -135,6 +135,12 @@
 
   .img-logo {
     margin-top: -26px;
+    margin-left: -5px;
+    position: absolute;
+    z-index: 999;
+  }
+  .navbar-custom {
+    margin-left: 100px;
   }
 
   /* 解决去除a标签里的href，导致没有样式的问题 */
@@ -148,8 +154,8 @@
   }
 
   .navbar .nav>li>a {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-family: "Microsoft YaHei", sans-serif;
     font-size: 16px;
     font-weight: 100;

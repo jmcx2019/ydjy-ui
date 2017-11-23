@@ -6,7 +6,12 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+require('swiper/dist/css/swiper.css')
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+
 Vue.use(VueAxios, axios)
+Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false
 
