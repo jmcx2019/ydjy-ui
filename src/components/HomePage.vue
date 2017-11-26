@@ -8,7 +8,15 @@
         <div class="homepage-art-exam-title">
           <img src="../assets/img/home-page/art-exam.png" alt="">
         </div>
-        <div class="homepage-art-exam-img-group" >
+        <div class="homepage-art-exam-img-group">
+          <div class="art-exam-div-title">
+            <div class="art-exam-div-name">
+              <div class="art-exam-div-txt">
+                <div>美术</div>
+                <div>艺考</div>
+              </div>
+            </div>
+          </div>
           <img src="../assets/img/home-page/art-test.png" alt="">
           <img src="../assets/img/home-page/chuanmeiyikao.png" alt="">
           <img src="../assets/img/home-page/art-exam-qa.png" alt="">
@@ -19,70 +27,32 @@
 
     <div class="outstanding-students">
       <div class="outstanding-students-bg">
+        <div class="container">
+          <div class="center-block outstanding-students-bg-more">
+            <div>More</div>
+            <img src="../assets/img/home-page/more-down.png" alt="">
+          </div>
+        </div>
         <div class="outstanding-students-title">
           <img src="../assets/img/home-page/student-style.png" alt="">
         </div>
-
         <div class="container outstanding-students-img-group">
-          <div class="col-md-2">
+          <div class="col-md-2"
+               v-for="infoItem in studentInfo">
             <div class="row"><img class="center-block" src="../assets/img/home-page/student.png" alt=""></div>
             <div class="row center-block outstanding-students-row">
-              <p>{{studentInfo.name}}</p>
+              <p>{{infoItem.name}}</p>
             </div>
             <div class="row">
-              <p class="p-student-school">{{studentInfo.school}}</p>
-              <p class="p-student-profession">{{studentInfo.profession}}</p>
+              <p class="p-student-school">{{infoItem.school}}</p>
+              <p class="p-student-profession">{{infoItem.profession}}</p>
             </div>
           </div>
-          <div class="col-md-2">
-            <div class="row"><img class="center-block" src="../assets/img/home-page/student.png" alt=""></div>
-            <div class="row center-block outstanding-students-row">
-              <p>{{studentInfo.name}}</p>
-            </div>
-            <div class="row">
-              <p class="p-student-school">{{studentInfo.school}}</p>
-              <p class="p-student-profession">{{studentInfo.profession}}</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="row"><img class="center-block" src="../assets/img/home-page/student.png" alt=""></div>
-            <div class="row center-block outstanding-students-row">
-              <p>{{studentInfo.name}}</p>
-            </div>
-            <div class="row">
-              <p class="p-student-school">{{studentInfo.school}}</p>
-              <p class="p-student-profession">{{studentInfo.profession}}</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="row"><img class="center-block" src="../assets/img/home-page/student.png" alt=""></div>
-            <div class="row center-block outstanding-students-row">
-              <p>{{studentInfo.name}}</p>
-            </div>
-            <div class="row">
-              <p class="p-student-school">{{studentInfo.school}}</p>
-              <p class="p-student-profession">{{studentInfo.profession}}</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="row"><img class="center-block" src="../assets/img/home-page/student.png" alt=""></div>
-            <div class="row center-block outstanding-students-row">
-              <p>{{studentInfo.name}}</p>
-            </div>
-            <div class="row">
-              <p class="p-student-school">{{studentInfo.school}}</p>
-              <p class="p-student-profession">{{studentInfo.profession}}</p>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="row"><img class="center-block" src="../assets/img/home-page/student.png" alt=""></div>
-            <div class="row center-block outstanding-students-row">
-              <p>{{studentInfo.name}}</p>
-            </div>
-            <div class="row">
-              <p class="p-student-school">{{studentInfo.school}}</p>
-              <p class="p-student-profession">{{studentInfo.profession}}</p>
-            </div>
+        </div>
+        <div class="container">
+          <div class="center-block outstanding-students-bg-more-2">
+            <div>More</div>
+            <img src="../assets/img/home-page/more-down.png" alt="">
           </div>
         </div>
       </div>
@@ -93,39 +63,13 @@
         <div class="homepage-teacher-team-title">
           <img src="../assets/img/home-page/teacher-team.png" alt="">
         </div>
-        <div class="homepage-teacher-team-img-group" >
+        <div class="homepage-teacher-team-img-group"
+             v-for="item in teacherInfo">
           <div class="col-md-3">
             <div class="row"><img src="../assets/img/home-page/teacher.png" alt=""></div>
             <div class="row">
-              <p class="p-teacher-name-school">{{teacherInfo.name}} | {{teacherInfo.school}}</p>
-              <p class="p-teacher-profession-title">{{teacherInfo.profession}}{{teacherInfo.title}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="homepage-teacher-team-img-group" >
-          <div class="col-md-3">
-            <div class="row"><img src="../assets/img/home-page/teacher.png" alt=""></div>
-            <div class="row">
-              <p class="p-teacher-name-school">{{teacherInfo.name}} | {{teacherInfo.school}}</p>
-              <p class="p-teacher-profession-title">{{teacherInfo.profession}}{{teacherInfo.title}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="homepage-teacher-team-img-group" >
-          <div class="col-md-3">
-            <div class="row"><img src="../assets/img/home-page/teacher.png" alt=""></div>
-            <div class="row">
-              <p class="p-teacher-name-school">{{teacherInfo.name}} | {{teacherInfo.school}}</p>
-              <p class="p-teacher-profession-title">{{teacherInfo.profession}}{{teacherInfo.title}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="homepage-teacher-team-img-group" >
-          <div class="col-md-3">
-            <div class="row"><img src="../assets/img/home-page/teacher.png" alt=""></div>
-            <div class="row">
-              <p class="p-teacher-name-school">{{teacherInfo.name}} | {{teacherInfo.school}}</p>
-              <p class="p-teacher-profession-title">{{teacherInfo.profession}}{{teacherInfo.title}}</p>
+              <p class="p-teacher-name-school">{{item.name}} | {{item.school}}</p>
+              <p class="p-teacher-profession-title">{{item.profession}}{{item.title}}</p>
             </div>
           </div>
         </div>
@@ -134,7 +78,19 @@
 
     <div class="homepage-class-table">
       <div class="homepage-class-table-bg">
+        <div class="container">
+          <div class="center-block class-bg-more">
+            <div>More</div>
+            <img src="../assets/img/home-page/more-down.png" alt="">
+          </div>
+        </div>
         <class-table></class-table>
+        <div class="container">
+          <div class="center-block class-bg-more-2">
+            <div>More</div>
+            <img src="../assets/img/home-page/more-down.png" alt="">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -160,13 +116,20 @@
               <img class="center-block" src="../assets/img/home-page/address.png" alt="">
               <p class="contact-info-p-title">总部地址</p>
               <p class="contact-info-p-content">东莞市东城街道光明路中云智慧产业园B栋303室</p>
-              <p class="contact-info-p-phone">0769-22667466</p>
+              <p class="contact-info-p-title-2">广州地址</p>
+              <p class="contact-info-p-content">广州市南沙区东涌镇筒太路致观艺术园</p>
+              <p class="contact-info-p-title-2">北京地址</p>
+              <p class="contact-info-p-content">北京市房山区圣泉文化公园天赐圣泉</p>
             </div>
             <div class="col-md-4">
               <img class="center-block" src="../assets/img/home-page/email.png" alt="">
               <p class="contact-info-p-title">邮箱</p>
               <p class="contact-info-p-content">yidongeducation@126.com</p>
             </div>
+          </div>
+          <div class="row contact-info-row">
+            <p class="contact-info-p-title">联系方式</p>
+            <p class="contact-info-p-phone">0769-22667466 / 18126818262 / 18025214797</p>
           </div>
         </div>
       </div>
@@ -189,8 +152,20 @@
     data() {
       return {
         clickedVal: 'HomePage',
-        studentInfo: {name: '学员姓名', school: '学校名称', profession: '专业名称'},
-        teacherInfo: {name: '老师姓名', school: '学校名称', profession: '专业名称', title: 'XX讲师'},
+        studentInfo: [
+          {name: '学员姓名', school: '学校名称', profession: '专业名称'},
+          {name: '学员姓名', school: '学校名称', profession: '专业名称'},
+          {name: '学员姓名', school: '学校名称', profession: '专业名称'},
+          {name: '学员姓名', school: '学校名称', profession: '专业名称'},
+          {name: '学员姓名', school: '学校名称', profession: '专业名称'},
+          {name: '学员姓名', school: '学校名称', profession: '专业名称'}
+        ],
+        teacherInfo: [
+          {name: '老师姓名', school: '学校名称', profession: '专业名称', title: 'XX讲师'},
+          {name: '老师姓名', school: '学校名称', profession: '专业名称', title: 'XX讲师'},
+          {name: '老师姓名', school: '学校名称', profession: '专业名称', title: 'XX讲师'},
+          {name: '老师姓名', school: '学校名称', profession: '专业名称', title: 'XX讲师'}
+        ],
         footerText: '版权所有 艺动教育 京ICP备案10011865号    京公网安备11010502022735号'
       }
     },
@@ -235,6 +210,30 @@
   }
   .outstanding-students-img-group > img {
     margin: 0 19px
+  }
+
+  .homepage-art-exam-img-group {
+    position: relative;
+  }
+  .art-exam-div-title {
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    left: 51px;
+    background-color: rgba(100, 69, 145, 0.8);
+  }
+  .art-exam-div-name {
+    height: 80px;
+    width: 80px;
+    border: 1px solid white;
+    margin-top: 80px;
+    margin-left: 80px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+  }
+  .art-exam-div-txt {
+    padding-top: 16px;
   }
 
   .outstanding-students-row {
@@ -288,6 +287,44 @@
   }
   /* end：学员风采、课程表、联系方式；有紫色背景图片的样式 */
 
+  /* Start: 圆形背景里的more */
+  .outstanding-students-bg-more,
+  .class-bg-more {
+    text-align: center;
+    height: 72px;
+    width: 72px;
+    background-color: white;
+    border-radius: 50%;
+    color: #b2cc49;
+    font-size: 12px;
+    margin-top: -36px;
+    padding-top: 30px;
+  }
+  .class-bg-more > img,
+  .outstanding-students-bg-more > img {
+    width: 6px;
+    margin-top: -10px;
+  }
+  .outstanding-students-bg-more-2,
+  .class-bg-more-2 {
+    text-align: center;
+    height: 72px;
+    width: 72px;
+    background-color: transparent;
+    color: #b2cc49;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+  .outstanding-students-bg-more-2 > img,
+  .class-bg-more-2 > img {
+    width: 6px;
+    margin-top: -10px;
+  }
+  .class-bg-more-2 {;
+    margin-top: -10px;
+  }
+  /* End: 圆形背景里的more */
+
   .homepage-news {
     margin-top: 60px;
   }
@@ -295,11 +332,15 @@
   .contact-info-row {
     text-align: center;
   }
-  .contact-info-p-title {
+  .contact-info-p-title,
+  .contact-info-p-title-2 {
     margin-top: 30px;
     color: #b2cc49;
     font-size: 16px;
     font-family: "Microsoft YaHei", sans-serif;
+  }
+  .contact-info-p-title-2 {
+    margin-top: 20px;
   }
   .contact-info-p-content,
   .contact-info-p-phone {

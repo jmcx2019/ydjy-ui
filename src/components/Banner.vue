@@ -52,5 +52,6 @@
 <style>
   .div-carousel {
     margin-top: -20px;
+    width: 1310px;
   }
 </style>
