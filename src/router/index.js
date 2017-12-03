@@ -8,11 +8,7 @@ import TrainClass from '@/components/TrainClass'
 import LearningProgress from '@/components/LearningProgress'
 import StudyAbroad from '@/components/StudyAbroad'
 
-
-
 Vue.use(Router)
-
-
 
 export default new Router({
   routes: [
@@ -24,7 +20,39 @@ export default new Router({
     {
       path: '/about-company',
       name: 'AboutCompany',
-      component: AboutCompany
+      component: AboutCompany,
+      children: [
+        {
+          path: 'introduction',
+          name: 'AboutCompanyIntroduction',
+          component: AboutCompany
+        },
+        {
+          path: 'advantage',
+          name: 'AboutCompanyAdvantage',
+          component: AboutCompany
+        },
+        {
+          path: 'teacher',
+          name: 'AboutCompanyTeacher',
+          component: AboutCompany
+        },
+        {
+          path: 'student',
+          name: 'AboutCompanyStudent',
+          component: AboutCompany
+        },
+        {
+          path: 'classroom',
+          name: 'AboutCompanyClassroom',
+          component: AboutCompany
+        },
+        {
+          path: 'contact',
+          name: 'AboutCompanyContact',
+          component: AboutCompany
+        }
+      ]
     },
     {
       path: '/art-exam',

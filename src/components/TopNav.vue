@@ -26,17 +26,12 @@
                 <img src="../assets/img/home-page/expand.png"/>
               </a>
               <ul class="dropdown-menu">
-                <li><a @click="toAboutCompany">艺动简介</a></li>
-                <li class="divider"></li>
-                <li><a @click="toAboutCompany">艺动优势</a></li>
-                <li class="divider"></li>
-                <li><a @click="toAboutCompany">师资团队</a></li>
-                <li class="divider"></li>
-                <li><a @click="toAboutCompany">学员风采</a></li>
-                <li class="divider"></li>
-                <li><a @click="toAboutCompany">教学环境</a></li>
-                <li class="divider"></li>
-                <li><a @click="toAboutCompany">联系我们</a></li>
+                <li v-for="(act,index) in aboutCompanyTxt">
+                  <router-link :to="{name: act.routeName, query:{id:act.id, name:act.pageName}}">
+                    {{act.pageName}}
+                  </router-link>
+                  <div class="divider" v-if="index<5"></div>
+                </li>
               </ul>
             </li>
 
@@ -92,14 +87,19 @@
         clicked4: 'TrainClass',
         clicked5: 'LearningProgress',
         clicked6: 'StudyAbroad',
+        aboutCompanyTxt: [
+          {id: 'introduction', routeName: 'AboutCompanyIntroduction', pageName: '艺动简介'},
+          {id: 'advantage', routeName: 'AboutCompanyAdvantage', pageName: '艺动优势'},
+          {id: 'teacher', routeName: 'AboutCompanyTeacher', pageName: '师资团队'},
+          {id: 'student', routeName: 'AboutCompanyStudent', pageName: '学员风采'},
+          {id: 'classroom', routeName: 'AboutCompanyClassroom', pageName: '教学环境'},
+          {id: 'contact', routeName: 'AboutCompanyContact', pageName: '联系我们'}
+        ]
       }
     },
     methods: {
       toHomePage() {
         this.$router.push({path: '/'})
-      },
-      toAboutCompany() {
-        this.$router.push({path: '/about-company'})
       },
       toArtExam() {
         this.$router.push({path: '/art-exam'})
@@ -138,6 +138,7 @@
     margin-left: -5px;
     position: absolute;
     z-index: 999;
+    /*height: 74px;*/
   }
   .navbar-custom {
     margin-left: 100px;
@@ -152,13 +153,15 @@
   .navbar {
     border-radius: 0;
   }
+  .navbar-nav ul {
+    width: 137.33px;
+  }
 
   .navbar .nav>li>a {
     padding-left: 30px;
     padding-right: 30px;
-    font-family: "Microsoft YaHei", sans-serif;
     font-size: 16px;
-    font-weight: 100;
+    font-weight: 400;
     color: white;
   }
 

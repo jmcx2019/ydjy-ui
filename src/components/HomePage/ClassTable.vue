@@ -71,7 +71,6 @@
   .class-table {
     max-width: 900px;
     margin: 75px auto;
-    font-family: "Microsoft YaHei", sans-serif;
     font-size: 12px;
   }
   .td-title {

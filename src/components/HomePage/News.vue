@@ -194,7 +194,6 @@
 
   .have-img-news-row {
     margin-bottom: 12px;
-    font-family: "Microsoft YaHei", sans-serif;
   }
   .news-list-title {
     font-size: 13px;
@@ -216,7 +215,6 @@
   .no-img-news-row {
     margin-left: 0;
     margin-bottom: 12px;
-    font-family: "Microsoft YaHei", sans-serif;
   }
   .news-list-title-no-img {
     font-size: 13px;

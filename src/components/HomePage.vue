@@ -241,20 +241,17 @@
     width: 140px;
     height: 30px;
     line-height: 30px;
-    font-family: "Microsoft YaHei", sans-serif;
     font-size: 13px;
     color: #644591;
   }
   .p-student-school {
     margin-bottom: 0;
     margin-top: 14px;
-    font-family: "Microsoft YaHei", sans-serif;
     font-size: 13px;
     color: white;
   }
   .p-student-profession,
   .p-teacher-profession-title {
-    font-family: "Microsoft YaHei", sans-serif;
     font-size: 13px;
     color: #b2cc49;
   }
@@ -262,7 +259,6 @@
   .p-teacher-name-school {
     margin-top: 16px;
     margin-bottom: 0;
-    font-family: "Microsoft YaHei", sans-serif;
     font-size: 13px;
     color: #644591;
   }
@@ -282,9 +278,9 @@
     height: 492px;
   }
   .homepage-contact-info-bg {
-    background: url("../assets/img/home-page/contact-info-bg.png") center no-repeat;
-    height: 610px;
-  }
+     background: url("../assets/img/home-page/contact-info-bg.png") center no-repeat;
+     height: 610px;
+   }
   /* end：学员风采、课程表、联系方式；有紫色背景图片的样式 */
 
   /* Start: 圆形背景里的more */
@@ -337,7 +333,6 @@
     margin-top: 30px;
     color: #b2cc49;
     font-size: 16px;
-    font-family: "Microsoft YaHei", sans-serif;
   }
   .contact-info-p-title-2 {
     margin-top: 20px;
@@ -346,7 +341,6 @@
   .contact-info-p-phone {
     color: white;
     font-size: 16px;
-    font-family: "Microsoft YaHei", sans-serif;
   }
   .contact-info-p-phone {
     font-size: 20px;
@@ -358,7 +352,6 @@
     background-color: #f6f6f6;
     color: #c7c7c7;
     text-align: center;
-    font-family: "Microsoft YaHei", sans-serif;
     font-size: 10px;
   }
 </style>
