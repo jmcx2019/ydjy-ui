@@ -47,19 +47,18 @@
             let data = [{viewImg: ''}], level1 = [], level2 = [], level3 = [], levelNull = []
 
             data = response.data.data.data
-            data.forEach(function (val) {
-              val.viewImg = 'http://localhost/uploads/' + val.avatar
-
-              if (val.view_level === '1') {
-                level1.push(val)
-              } else if (val.view_level === '2') {
-                level2.push(val)
-              } else if (val.view_level === '3') {
-                level3.push(val)
+            for (let i = 0, length = data.length; i < length; i++) {
+              data[i].viewImg = 'http://localhost/uploads/' + data[i].avatar
+              if (data[i].view_level === '1') {
+                level1.push(data[i])
+              } else if (data[i].view_level === '2') {
+                level2.push(data[i])
+              } else if (data[i].view_level === '3') {
+                level3.push(data[i])
               } else {
-                levelNull.push(val)
+                levelNull.push(data[i])
               }
-            })
+            }
 
             this.teachers.push(level3[0])
             this.teachers.push(level2[0])

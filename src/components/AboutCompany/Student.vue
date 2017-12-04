@@ -28,13 +28,12 @@
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get('http://localhost/api/v1/teacher').then(response => {
+        this.axios.get('http://localhost/api/v1/student').then(response => {
           if (response.data.code === 1000) {
             this.students = response.data.data.data
             this.students.forEach(function (val) {
-              val.viewImg = 'http://localhost/uploads/' + val.avatar
+              val.viewImg = 'http://localhost/uploads/' + val.image
             })
-            this.students.push.apply(this.students, this.students)
           }
         })
       }

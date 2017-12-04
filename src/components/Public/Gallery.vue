@@ -6,6 +6,7 @@
       <div class="hidden-xs col-sm-1 hidden-md col-lg-1"></div>
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
         <div class="big-view-img">
+          <img class="view-mark" v-if="viewDataArr[0].viewMark" :src="viewDataArr[0].viewMark">
           <img :src="viewDataArr[0].viewImg">
         </div>
       </div>
@@ -67,15 +68,26 @@
 </script>
 
 <style>
+  /* 焦点图样式 */
   .big-view-img {
     margin: 40px auto 30px;
     text-align: center;
     height: 330px;
+    position: relative;
   }
   .big-view-img > img {
     max-height: 330px;
   }
 
+  /* 焦点图的标识样式 */
+  .view-mark {
+    position: absolute;
+    width: 60px;
+    height: 58px;
+    margin: 10px 0 0 10px;
+  }
+
+  /* 缩略图列表样式 */
   .view-img-div {
     height:88px;overflow: hidden;
   }
@@ -92,6 +104,7 @@
     width: 86px;
   }
 
+  /* 缩略图样式 */
   .view-img-item {
     width: 86px;
     height: 86px;
@@ -100,6 +113,7 @@
     border: 4px solid #644591;
   }
 
+  /* 缩略图左右侧按钮样式 */
   .view-img-more {
     height: 86px;
     line-height: 86px;
@@ -107,7 +121,6 @@
   .view-img-more-left {
     position: relative;
   }
-
   .view-img-more-left > img {
     position: absolute;
     right: 0;

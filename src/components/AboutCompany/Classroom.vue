@@ -22,19 +22,28 @@
     },
     data() {
       return {
-        classrooms: [{viewImg: require('../../assets/img/null.png')}]
+        classrooms: [{viewImg: require('../../assets/img/null.png'), location: '东莞校区'}],
+        location: {
+          dg: require('../../assets/img/about-company/classroom-dongguan.png'),
+          gz: require('../../assets/img/about-company/classroom-guangzhou.png')
+        }
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get('http://localhost/api/v1/teacher').then(response => {
+        this.axios.get('http://localhost/api/v1/classroom').then(response => {
           if (response.data.code === 1000) {
             this.classrooms = response.data.data.data
-            this.classrooms.forEach(function (val) {
-              val.viewImg = 'http://localhost/uploads/' + val.avatar
-            })
-            this.classrooms.push.apply(this.classrooms, this.classrooms)
+
+            for (let i = 0, length = this.classrooms.length; i < length; i++) {
+              this.classrooms[i].viewImg = 'http://localhost/uploads/' + this.classrooms[i].image
+              if (this.classrooms[i].location === '东莞校区') {
+                this.classrooms[i].viewMark = this.location.dg
+              } else {
+                this.classrooms[i].viewMark = this.location.gz
+              }
+            }
           }
         })
       }
