@@ -2,28 +2,7 @@
   <div id="home-page">
     <top-nav :clicked="clickedVal"></top-nav>
     <banner></banner>
-
-    <div class="homepage-art-exam">
-      <div class="container">
-        <div class="homepage-art-exam-title">
-          <img src="../assets/img/home-page/art-exam.png" alt="">
-        </div>
-        <div class="homepage-art-exam-img-group">
-          <div class="art-exam-div-title">
-            <div class="art-exam-div-name">
-              <div class="art-exam-div-txt">
-                <div>美术</div>
-                <div>艺考</div>
-              </div>
-            </div>
-          </div>
-          <img src="../assets/img/home-page/art-test.png" alt="">
-          <img src="../assets/img/home-page/chuanmeiyikao.png" alt="">
-          <img src="../assets/img/home-page/art-exam-qa.png" alt="">
-          <img src="../assets/img/home-page/zhongkaotechangsheng.png" alt="">
-        </div>
-      </div>
-    </div>
+    <art-exam></art-exam>
 
     <div class="outstanding-students">
       <div class="outstanding-students-bg">
@@ -146,6 +125,7 @@
   import Banner from './Banner'
   import ClassTable from './HomePage/ClassTable'
   import News from './HomePage/News'
+  import ArtExam from './HomePage/ArtExam'
 
   export default {
     name: 'HomePage',
@@ -173,16 +153,13 @@
       TopNav,
       Banner,
       ClassTable,
-      News
+      News,
+      ArtExam
     }
   }
 </script>
 
 <style>
-  .homepage-art-exam-title {
-    margin-top: 42px;
-    margin-bottom: 52px;
-  }
   .outstanding-students-title {
     padding-top: 56px;
     margin-bottom: 60px;
@@ -195,8 +172,6 @@
     margin-top: 32px;
     margin-bottom: 44px;
   }
-  .homepage-art-exam-title,
-  .homepage-art-exam-img-group,
   .outstanding-students-title,
   .homepage-contact-info-title,
   .outstanding-students-img-group,
@@ -204,7 +179,6 @@
   .homepage-teacher-team-img-group {
     text-align: center;
   }
-  .homepage-art-exam-img-group > img,
   .homepage-teacher-team-img-group > img {
     margin: 0 11px
   }
@@ -212,30 +186,9 @@
     margin: 0 19px
   }
 
-  .homepage-art-exam-img-group {
-    position: relative;
+  .homepage-art-exam-img-group img{
+    margin-bottom: 10px;
   }
-  .art-exam-div-title {
-    position: absolute;
-    height: 240px;
-    width: 240px;
-    left: 51px;
-    background-color: rgba(100, 69, 145, 0.8);
-  }
-  .art-exam-div-name {
-    height: 80px;
-    width: 80px;
-    border: 1px solid white;
-    margin-top: 80px;
-    margin-left: 80px;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-  }
-  .art-exam-div-txt {
-    padding-top: 16px;
-  }
-
   .outstanding-students-row {
     background-color: white;
     width: 140px;
