@@ -1,25 +1,23 @@
 <template>
   <tr>
-    <td class="td-title">{{tableItem.className}}</td>
+    <td class="td-title">{{tableItem.name}}</td>
     <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.studentType}}</td>
+    <td class="td-content">
+      <div class="td-div">
+        <div class="td-div-table-view">{{tableItem.description}}</div>
+      </div>
+    </td>
     <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.classContent}}</td>
+    <td class="td-content">
+      <div class="td-div">
+        <div class="td-div-table-view">{{tableItem.content}}</div>
+      </div>
+    </td>
     <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.semester}}</td>
+    <td class="td-content">{{tableItem.semester}}个月</td>
     <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.fee}}</td>
+    <td class="td-content">{{tableItem.fee}}元</td>
     <td class="td-interval"></td>
-
-    <td class="td-title">{{tableItem.className}}</td>
-    <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.studentType}}</td>
-    <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.classContent}}</td>
-    <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.semester}}</td>
-    <td class="td-interval"></td>
-    <td class="td-content">{{tableItem.fee}}</td>
   </tr>
 </template>
 
@@ -43,5 +41,13 @@
   }
   .td-interval {
     width: 3px;
+  }
+  .td-div {
+    height: 70px;
+    overflow: hidden;
+  }
+  .td-div-table-view {
+    vertical-align: middle;
+    display: table-cell;
   }
 </style>

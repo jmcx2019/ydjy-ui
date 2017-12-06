@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="news">
+  <div class="container homepage-news" id="news">
     <div class="row">
       <div class="col-lg-1 col-md-1"></div>
 
@@ -92,6 +92,10 @@
 </script>
 
 <style>
+  .homepage-news {
+    margin-top: 60px;
+  }
+
   .news-list-left-area {
     margin-left: -15px;
   }
