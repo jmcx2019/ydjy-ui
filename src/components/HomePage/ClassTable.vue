@@ -1,9 +1,9 @@
 <template>
   <div id="class-table" class="homepage-class-table">
     <div class="homepage-class-table-bg">
-      <div class="center-block class-bg-more">
+      <div class="class-bg-more">
         <div>More</div>
-        <img src="../../assets/img/home-page/more-down.png" alt="">
+        <img :src="moreDown">
       </div>
 
       <div class="container">
@@ -61,7 +61,7 @@
 
       <div class="class-bg-more-2">
         <div>More</div>
-        <img src="../../assets/img/home-page/more-down.png" alt="">
+        <img :src="moreDown">
       </div>
     </div>
   </div>
@@ -83,6 +83,7 @@
     },
     data() {
       return {
+        moreDown: require('../../assets/img/home-page/more-down.png'),
         tableTitle: ['课程班名', '针对学员类型', '课程内容', '学期', '学费'],
         tableData: []
       }

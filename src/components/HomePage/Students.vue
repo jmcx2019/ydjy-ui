@@ -1,12 +1,11 @@
 <template>
   <div id="students" class="outstanding-students">
     <div class="outstanding-students-bg">
-      <div class="container">
-        <div class="center-block outstanding-students-bg-more">
-          <div>More</div>
-          <img :src="moreDown">
-        </div>
+      <div class="class-bg-more">
+        <div>More</div>
+        <img :src="moreDown">
       </div>
+
       <div class="outstanding-students-title">
         <img :src="studentStyleTit">
       </div>
@@ -15,20 +14,19 @@
              v-for="(infoItem,index) in students"
              :class="[index<4 ? 'col-sm-3' : 'hidden-sm', index<2 ? 'col-xs-6' : 'hidden-xs']">
           <img class="center-block" :src="infoItem.viewImg">
-          <div class="row outstanding-students-row">
-            <p>{{infoItem.name}}</p>
-          </div>
-          <div class="row">
-            <p class="p-student-school">{{infoItem.school}}</p>
-            <p class="p-student-profession">{{infoItem.profession}}</p>
-          </div>
+          <!--<div class="row outstanding-students-row">-->
+            <!--<p>{{infoItem.name}}</p>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+            <!--<p class="p-student-school">{{infoItem.school}}</p>-->
+            <!--<p class="p-student-profession">{{infoItem.profession}}</p>-->
+          <!--</div>-->
         </div>
       </div>
-      <div class="container">
-        <div class="center-block outstanding-students-bg-more-2">
-          <div>More</div>
-          <img :src="moreDown">
-        </div>
+
+      <div class="class-bg-more-2">
+        <div>More</div>
+        <img :src="moreDown">
       </div>
     </div>
   </div>
@@ -116,38 +114,39 @@
   .outstanding-students-bg {
     background: url("../../assets/img/home-page/student-stlye-bg.png") center no-repeat;
     height: 492px;
+    position: relative;
+    text-align: center;
   }
 
   /* Start: 圆形背景里的more */
-  .outstanding-students-bg-more {
-    text-align: center;
+  .class-bg-more {
     height: 72px;
     width: 72px;
+    position: absolute;
+    top: 0;
+    left:50%;
+    margin: -36px 0 0 -36px;
     background-color: white;
     border-radius: 50%;
     color: #b2cc49;
     font-size: 12px;
-    margin-top: -36px;
-    padding-top: 30px;
   }
-  .class-bg-more > img,
-  .outstanding-students-bg-more > img {
-    width: 6px;
-    margin-top: -10px;
+  .class-bg-more > div {
+    margin-top: 33px;
   }
-  .outstanding-students-bg-more-2 {
-    text-align: center;
+
+  .class-bg-more-2 {
     height: 72px;
     width: 72px;
-    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    margin-left: -36px;
     color: #b2cc49;
     font-size: 12px;
-    margin-top: 48px;
   }
-  .outstanding-students-bg-more-2 > img,
-  .class-bg-more-2 > img {
-    width: 6px;
-    margin-top: -10px;
+  .class-bg-more-2 > div {
+    margin-top: 36px;
   }
   /* End: 圆形背景里的more */
 </style>
