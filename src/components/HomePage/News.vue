@@ -1,9 +1,9 @@
 <template>
   <div class="container homepage-news" id="news">
     <div class="row">
-      <div class="col-lg-1 col-md-1"></div>
+      <div class="hidden-xs hidden-sm hidden-md col-lg-1"></div>
 
-      <div class="col-md-3 news-list-left-area">
+      <div class="hidden-xs hidden-sm col-md-4 col-lg-3 news-list-left-area">
         <div class="row news-list-left-first-row">
           <div class="news-img-1-div-title">
             <div class="rotate-style">Environment</div>
@@ -17,7 +17,7 @@
           <img class="news-img-2" src="../../assets/img/home-page/environment-5.png" alt="">
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="hidden-xs col-sm-3 col-md-2 col-lg-2">
         <div class="row">
           <div class="news-img-3-div-title"></div>
           <div class="news-img-3-2-div-title"></div>
@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div class="col-md-6 news-list-right-area">
+      <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6 news-list-right-area">
         <div class="row news-title-row">
           <img src="../../assets/img/home-page/news-title.png" alt="">
         </div>
@@ -46,11 +46,11 @@
         <div class="row have-img-news-row"
              v-for="(newsItem,index) in newsList"
              v-if="index <= 2">
-          <div class="col-md-2 new-img-col">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-2 new-img-col">
             <!--<img :src="newsItem.img_url" alt="">-->
             <img src="../../assets/img/home-page/news.png" alt="">
           </div>
-          <div class="col-md-10">
+          <div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
             <div class="row news-list-title">{{newsItem.title}}</div>
             <div class="row news-list-content">{{newsItem.content}}</div>
             <div class="row news-list-time pull-right">{{newsItem.time}}</div>
@@ -62,8 +62,8 @@
              v-if="index > 2">
           <div class="row news-list-title-no-img">· {{newsItem.title}}</div>
           <div class="row">
-            <div class="col-md-9 news-list-content-no-img">{{newsItem.content}}</div>
-            <div class="col-md-3 news-list-time-no-img">{{newsItem.time}}</div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 news-list-content-no-img">{{newsItem.content}}</div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 news-list-time-no-img">{{newsItem.time}}</div>
           </div>
         </div>
 

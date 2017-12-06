@@ -1,7 +1,7 @@
 <template>
   <div id="banner">
-    <div class="container div-carousel">
-      <div class="md-card-media">
+    <div class="div-carousel">
+      <div class="container md-card-media">
         <div class="swiper-container swiper-container-horizontal">
           <swiper :options="swiperOption">
             <!--<swiper-slide><img :src="this.imgUrl[0]" class="img-responsive " alt=""></swiper-slide>-->
@@ -52,6 +52,5 @@
 <style>
   .div-carousel {
     margin-top: -20px;
-    width: 1310px;
   }
 </style>
