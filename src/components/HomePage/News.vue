@@ -47,13 +47,12 @@
              v-for="(newsItem,index) in newsList"
              v-if="index <= 2">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-2 new-img-col">
-            <!--<img :src="newsItem.img_url" alt="">-->
-            <img src="../../assets/img/home-page/news.png" alt="">
+            <img :src="newsItem.img" alt="">
           </div>
           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
             <div class="row news-list-title">{{newsItem.title}}</div>
-            <div class="row news-list-content">{{newsItem.content}}</div>
-            <div class="row news-list-time pull-right">{{newsItem.time}}</div>
+            <div class="row news-list-content">{{newsItem.summary}}</div>
+            <div class="row news-list-time pull-right">{{newsItem.created_at | formatDate}}</div>
           </div>
         </div>
 
@@ -62,8 +61,8 @@
              v-if="index > 2">
           <div class="row news-list-title-no-img">· {{newsItem.title}}</div>
           <div class="row">
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 news-list-content-no-img">{{newsItem.content}}</div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 news-list-time-no-img">{{newsItem.time}}</div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 news-list-content-no-img">{{newsItem.summary}}</div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 news-list-time-no-img">{{newsItem.created_at | formatDate}}</div>
           </div>
         </div>
 
@@ -73,19 +72,50 @@
 </template>
 
 <script>
+  import {formatDate} from '../../common/format-date.js';
+
   export default {
     name: 'News',
+    watch: {
+      // 如果路由有变化，会再次执行该方法
+      '$route': 'fetchData'
+    },
+    filters: {
+      formatDate(time) {
+        let date = new Date(time);
+        return formatDate(date, "yyyy-MM-dd");
+      }
+    },
     data() {
       return {
-        newsList : [
-          { title: '新校区落成', content: '为了更好的服务广大的考生，艺动教育重金重新打造新校区...', img_url: '../../assets/img/home-page/news.png', time: '2017-11-20'},
-          { title: '新校区落成', content: '为了更好的服务广大的考生，艺动教育重金重新打造新校区...', img_url: '../../assets/img/home-page/news.png', time: '2017-11-20'},
-          { title: '新校区落成', content: '为了更好的服务广大的考生，艺动教育重金重新打造新校区...', img_url: '../../assets/img/home-page/news.png', time: '2017-11-20'},
+        newsList: []
+      }
+    },
+    created() {
+      // 组件创建完后获取数据，此时 data 已经被 observed 了
+      this.fetchData()
+    },
+    data() {
+      return {
+        newsList: []
+      }
+    },
+    methods: {
+      fetchData() {
+        // Get获取数据
+        this.axios.get('http://localhost/api/v1/intelligence?count=6').then(response => {
+          if (response.data.code === 1000) {
+            this.newsList = response.data.data.data
+            this.newsList.forEach(function (val) {
+              val.img = 'http://localhost/uploads/' + val.focus_img_url
+            })
 
-          { title: '新校区落成', content: '为了更好的服务广大的考生，艺动教育重金重新打造新校区...', img_url: '../../assets/img/home-page/news.png', time: '2017-11-20'},
-          { title: '新校区落成', content: '为了更好的服务广大的考生，艺动教育重金重新打造新校区...', img_url: '../../assets/img/home-page/news.png', time: '2017-11-20'},
-          { title: '新校区落成', content: '为了更好的服务广大的考生，艺动教育重金重新打造新校区...', img_url: '../../assets/img/home-page/news.png', time: '2017-11-20'}
-        ]
+            // TODO： 临时代码
+            for (let i = 0; i < 6; i++) {
+              this.newsList[i] = response.data.data.data[0]
+            }
+          }
+        })
       }
     }
   }
