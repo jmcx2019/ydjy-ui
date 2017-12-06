@@ -70,9 +70,6 @@
     height: 240px;
   }
 
-  .homepage-art-exam-img-group img{
-    margin-bottom: 10px;
-  }
   .p-teacher-profession-title {
     font-size: 13px;
     color: #b2cc49;

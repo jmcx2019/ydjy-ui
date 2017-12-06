@@ -148,5 +148,11 @@
   .class-bg-more-2 > div {
     margin-top: 36px;
   }
+
+  .class-bg-more > img,
+  .class-bg-more-2 > img {
+    width: 6px;
+    margin-top: -10px;
+  }
   /* End: 圆形背景里的more */
 </style>
