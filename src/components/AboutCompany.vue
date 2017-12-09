@@ -11,7 +11,7 @@
 
       <div class="row about-company-content">
         <div class="hidden-xs hidden-sm col-md-4 col-lg-3">
-          <left-nav :clicked="$route.query.name" ></left-nav>
+          <left-nav :clicked="$route.query.name" :navList="navList"></left-nav>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
           <component :is="$route.query.id"></component>
@@ -24,7 +24,7 @@
 <script>
   // 引入子组件
   import TopNav from './TopNav'
-  import LeftNav from "./AboutCompany/LeftNav.vue"
+  import LeftNav from "./Public/LeftNav.vue"
   import Introduction from "./AboutCompany/Introduction"
   import Advantage from "./AboutCompany/Advantage"
   import Teacher from "./AboutCompany/Teacher"
@@ -36,7 +36,15 @@
     name: 'AboutCompany',
     data() {
       return {
-        clickedVal: 'AboutCompany'
+        clickedVal: 'AboutCompany',
+        navList: [
+          {id: 'introduction', routeName: 'AboutCompanyIntroduction', pageName: '艺动简介'},
+          {id: 'advantage', routeName: 'AboutCompanyAdvantage', pageName: '艺动优势'},
+          {id: 'teacher', routeName: 'AboutCompanyTeacher', pageName: '师资团队'},
+          {id: 'student', routeName: 'AboutCompanyStudent', pageName: '学员风采'},
+          {id: 'classroom', routeName: 'AboutCompanyClassroom', pageName: '教学环境'},
+          {id: 'contact', routeName: 'AboutCompanyContact', pageName: '联系我们'}
+        ]
       }
     },
     components: { // 引入子组件

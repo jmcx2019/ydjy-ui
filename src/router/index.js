@@ -24,45 +24,129 @@ export default new Router({
       children: [
         {
           path: 'introduction',
-          name: 'AboutCompanyIntroduction',
-          component: AboutCompany
+          name: 'AboutCompanyIntroduction'
         },
         {
           path: 'advantage',
-          name: 'AboutCompanyAdvantage',
-          component: AboutCompany
+          name: 'AboutCompanyAdvantage'
         },
         {
           path: 'teacher',
-          name: 'AboutCompanyTeacher',
-          component: AboutCompany
+          name: 'AboutCompanyTeacher'
         },
         {
           path: 'student',
-          name: 'AboutCompanyStudent',
-          component: AboutCompany
+          name: 'AboutCompanyStudent'
         },
         {
           path: 'classroom',
-          name: 'AboutCompanyClassroom',
-          component: AboutCompany
+          name: 'AboutCompanyClassroom'
         },
         {
           path: 'contact',
-          name: 'AboutCompanyContact',
-          component: AboutCompany
+          name: 'AboutCompanyContact'
         }
       ]
     },
     {
       path: '/art-exam',
       name: 'ArtExam',
-      component: ArtExam
+      component: ArtExam,
+      children: [
+        {
+          path: 'media',
+          name: 'ArtExamMedia',
+          children: [
+            {
+              path: 'introduction',
+              name: 'ArtExamMediaIntroduction'
+            },
+            {
+              path: 'advantage',
+              name: 'ArtExamMediaAdvantage'
+            },
+            {
+              path: 'admission-score',
+              name: 'ArtExamMediaAdmissionScore'
+            },
+            {
+              path: 'broadcast',
+              name: 'ArtExamMediaBroadcast'
+            },
+            {
+              path: 'editor',
+              name: 'ArtExamMediaEditor'
+            },
+            {
+              path: 'performance',
+              name: 'ArtExamMediaPerformance'
+            },
+            {
+              path: 'photography',
+              name: 'ArtExamMediaPhotography'
+            },
+            {
+              path: 'university',
+              name: 'ArtExamMediaUniversity'
+            }
+          ]
+        },
+        {
+          path: 'art',
+          name: 'ArtExamArt',
+          children: [
+            {
+              path: 'introduction',
+              name: 'ArtExamArtIntroduction'
+            },
+            {
+              path: 'advantage',
+              name: 'ArtExamArtAdvantage'
+            },
+            {
+              path: 'subject',
+              name: 'ArtExamArtSubject'
+            },
+            {
+              path: 'university',
+              name: 'ArtExamArtUniversity'
+            }
+          ]
+        },
+        {
+          path: 'middle',
+          name: 'ArtExamMiddle',
+          children: [
+            {
+              path: 'introduction',
+              name: 'ArtExamMiddleIntroduction'
+            },
+            {
+              path: 'advantage',
+              name: 'ArtExamMiddleAdvantage'
+            },
+            {
+              path: 'subject',
+              name: 'ArtExamMiddleSubject'
+            }
+          ]
+        }
+      ]
     },
     {
       path: '/train-class',
       name: 'TrainClass',
-      component: TrainClass
+      component: TrainClass,
+      children: [
+        {
+          path: 'art',
+          name: 'TrainClassArt'
+        },
+        {
+          path: 'media',
+          name: 'TrainClassMedia'
+        }
+      ]
     },
     {
       path: '/learning-progress',

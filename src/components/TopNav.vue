@@ -11,61 +11,66 @@
 
         <div class="navbar-header logo">
           <a class="navbar-brand" @click="toHomePage">
-            <img class="img-logo" src="../assets/img/logo.png" alt="艺动教育">
+            <img class="img-logo" src="../assets/img/logo.png">
           </a>
         </div>
 
         <div class="navbar-custom">
           <ul class="nav navbar-nav">
 
-            <li v-bind:class="[(clicked === clicked1 ) ? 'active' : '']"><a @click="toHomePage">首页</a></li>
+            <li v-bind:class="[(clicked === navInfo[0].clickedVal ) ? 'active' : '']"><a @click="toHomePage">{{navInfo[0].name}}</a>
+            </li>
 
-            <li class="dropdown" v-bind:class="[(clicked === clicked2 ) ? 'active' : '']">
+            <li class="dropdown" v-bind:class="[(clicked === navInfo[1].clickedVal ) ? 'active' : '']">
               <a class="dropdown-toggle" data-toggle="dropdown">
-                关于艺动
+                {{navInfo[1].name}}
                 <img src="../assets/img/home-page/expand.png"/>
               </a>
               <ul class="dropdown-menu">
-                <li v-for="(act,index) in aboutCompanyTxt">
-                  <router-link :to="{name: act.routeName, query:{id:act.id, name:act.pageName}}">
-                    {{act.pageName}}
+                <li v-for="(aci,index) in aboutCompanyInfo">
+                  <router-link :to="{name: aci.routeName, query:{id:aci.id, name:aci.pageName}}">
+                    {{aci.pageName}}
                   </router-link>
                   <div class="divider" v-if="index<5"></div>
                 </li>
               </ul>
             </li>
 
-            <li class="dropdown" v-bind:class="[(clicked === clicked3 ) ? 'active' : '']">
+            <li class="dropdown" v-bind:class="[(clicked === navInfo[2].clickedVal ) ? 'active' : '']">
               <a class="dropdown-toggle" data-toggle="dropdown">
-                艺术升学
+                {{navInfo[2].name}}
                 <img src="../assets/img/home-page/expand.png"/>
               </a>
               <ul class="dropdown-menu">
-                <li><a @click="toArtExam">传媒艺考</a></li>
-                <li class="divider"></li>
-                <li><a @click="toArtExam">美术艺考</a></li>
-                <li class="divider"></li>
-                <li><a @click="toArtExam">艺考Q&A</a></li>
-                <li class="divider"></li>
-                <li><a @click="toArtExam">中考美术特长生</a></li>
+                <li v-for="(aei,index) in artExamInfo">
+                  <router-link :to="{name: aei.routeName, query:{id:aei.id, name:aei.pageName, child:0}}">
+                    {{aei.pageName}}
+                  </router-link>
+                  <div class="divider" v-if="index<2"></div>
+                </li>
               </ul>
             </li>
 
-            <li class="dropdown" v-bind:class="[(clicked === clicked4 ) ? 'active' : '']">
+            <li class="dropdown" v-bind:class="[(clicked === navInfo[3].clickedVal ) ? 'active' : '']">
               <a class="dropdown-toggle" data-toggle="dropdown">
-                培训课程
+                {{navInfo[3].name}}
                 <img src="../assets/img/home-page/expand.png"/>
               </a>
               <ul class="dropdown-menu">
-                <li><a @click="toTrainClass">美术培训</a></li>
-                <li class="divider"></li>
-                <li><a @click="toTrainClass">传媒培训</a></li>
+                <li v-for="(tci,index) in trainClassInfo">
+                  <router-link :to="{name: tci.routeName, query:{id:tci.id, name:tci.pageName}}">
+                    {{tci.pageName}}
+                  </router-link>
+                  <div class="divider" v-if="index<1"></div>
+                </li>
               </ul>
             </li>
 
-            <li v-bind:class="[(clicked === clicked5 ) ? 'active' : '']"><a @click="toLearningProgress">学习进度</a></li>
+            <li v-bind:class="[(clicked === navInfo[4].clickedVal ) ? 'active' : '']"><a @click="toLearningProgress">{{navInfo[4].name}}</a>
+            </li>
 
-            <li v-bind:class="[(clicked === clicked6 ) ? 'active' : '']"><a @click="toStudyAbroad">留学游学</a></li>
+            <li v-bind:class="[(clicked === navInfo[5].clickedVal ) ? 'active' : '']"><a @click="toStudyAbroad">{{navInfo[5].name}}</a>
+            </li>
 
           </ul>
         </div>
@@ -81,31 +86,36 @@
     props: ['clicked'], // 引入到组件中的数据/变量
     data() {
       return {
-        clicked1: 'HomePage',
-        clicked2: 'AboutCompany',
-        clicked3: 'ArtExam',
-        clicked4: 'TrainClass',
-        clicked5: 'LearningProgress',
-        clicked6: 'StudyAbroad',
-        aboutCompanyTxt: [
+        navInfo: [
+          {name: '首页', clickedVal: 'HomePage'},
+          {name: '关于艺动', clickedVal: 'AboutCompany'},
+          {name: '艺术升学', clickedVal: 'ArtExam'},
+          {name: '培训课程', clickedVal: 'TrainClass'},
+          {name: '学习进度', clickedVal: 'LearningProgress'},
+          {name: '留学游学', clickedVal: 'StudyAbroad'}
+        ],
+        aboutCompanyInfo: [
           {id: 'introduction', routeName: 'AboutCompanyIntroduction', pageName: '艺动简介'},
           {id: 'advantage', routeName: 'AboutCompanyAdvantage', pageName: '艺动优势'},
           {id: 'teacher', routeName: 'AboutCompanyTeacher', pageName: '师资团队'},
           {id: 'student', routeName: 'AboutCompanyStudent', pageName: '学员风采'},
           {id: 'classroom', routeName: 'AboutCompanyClassroom', pageName: '教学环境'},
           {id: 'contact', routeName: 'AboutCompanyContact', pageName: '联系我们'}
+        ],
+        artExamInfo: [
+          {id: 'media', routeName: 'ArtExamMedia', pageName: '传媒艺考'},
+          {id: 'art', routeName: 'ArtExamArt', pageName: '美术艺考'},
+          {id: 'middle', routeName: 'ArtExamMiddle', pageName: '中考美术特长生'}
+        ],
+        trainClassInfo: [
+          {id: 'art', routeName: 'TrainClassArt', pageName: '美术培训'},
+          {id: 'media', routeName: 'TrainClassMedia', pageName: '传媒培训'}
         ]
       }
     },
     methods: {
       toHomePage() {
         this.$router.push({path: '/'})
-      },
-      toArtExam() {
-        this.$router.push({path: '/art-exam'})
-      },
-      toTrainClass() {
-        this.$router.push({path: '/train-class'})
       },
       toLearningProgress() {
         this.$router.push({path: '/learning-progress'})
@@ -140,6 +150,7 @@
     z-index: 999;
     /*height: 74px;*/
   }
+
   .navbar-custom {
     margin-left: 100px;
   }
@@ -153,11 +164,12 @@
   .navbar {
     border-radius: 0;
   }
+
   .navbar-nav ul {
     width: 137.33px;
   }
 
-  .navbar .nav>li>a {
+  .navbar .nav > li > a {
     padding-left: 30px;
     padding-right: 30px;
     font-size: 16px;
@@ -166,19 +178,20 @@
   }
 
   .navbar-default,
-  .navbar-default .navbar-nav>.active>a,
-  .navbar-default .navbar-nav>.active>a:hover,
-  .navbar-default .navbar-nav>.active>a:focus {
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
     background-color: #5f488c;
     border-color: #5f488c;
     color: #acc14f;
   }
 
-  .navbar-default .navbar-nav>.open>a,
-  .navbar-default .navbar-nav>.open>a:hover,
-  .navbar-default .navbar-nav>.open>a:focus {
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > .open > a:hover,
+  .navbar-default .navbar-nav > .open > a:focus {
     background-color: #5f488c;
   }
+
   /* 导航区域 end */
 
   /*下拉菜单 start*/
@@ -194,7 +207,7 @@
     padding: 0;
   }
 
-  .dropdown-menu>li>a {
+  .dropdown-menu > li > a {
     color: white;
     font-size: 13px;
     font-weight: 100;
@@ -204,8 +217,8 @@
     padding-bottom: 0;
   }
 
-  .dropdown-menu>li>a:hover,
-  .dropdown-menu>li>a:focus {
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li > a:focus {
     background-color: #5f488c;
     color: #acc14f;
   }
@@ -215,5 +228,6 @@
     margin: 0;
     background-color: white;
   }
+
   /*下拉菜单 end*/
 </style>
