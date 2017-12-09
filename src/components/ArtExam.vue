@@ -38,6 +38,9 @@
   import MediaPhotography from "./ArtExam/Media/Photography"
   import MediaUniversity from "./ArtExam/Media/University"
   import ArtIntroduction from "./ArtExam/Art/Introduction"
+  import ArtAdvantage from "./ArtExam/Art/Advantage"
+  import ArtSubject from "./ArtExam/Art/Subject"
+  import ArtUniversity from "./ArtExam/Art/University"
   import MiddleIntroduction from "./ArtExam/Middle/Introduction"
 
   export default {
@@ -87,6 +90,9 @@
       MediaPhotography,
       MediaUniversity,
       ArtIntroduction,
+      ArtAdvantage,
+      ArtSubject,
+      ArtUniversity,
       MiddleIntroduction
     }
   }
