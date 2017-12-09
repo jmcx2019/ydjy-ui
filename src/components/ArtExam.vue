@@ -42,6 +42,8 @@
   import ArtSubject from "./ArtExam/Art/Subject"
   import ArtUniversity from "./ArtExam/Art/University"
   import MiddleIntroduction from "./ArtExam/Middle/Introduction"
+  import MiddleAdvantage from "./ArtExam/Middle/Advantage"
+  import MiddleSubject from "./ArtExam/Middle/Subject"
 
   export default {
     name: 'ArtExam',
@@ -93,7 +95,9 @@
       ArtAdvantage,
       ArtSubject,
       ArtUniversity,
-      MiddleIntroduction
+      MiddleIntroduction,
+      MiddleAdvantage,
+      MiddleSubject
     }
   }
 </script>

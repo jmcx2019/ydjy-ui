@@ -36,10 +36,10 @@
     data() {
       return {
         artExamData: [
-          {image: require('../../assets/img/home-page/art-test.png'), txt1: '美术', txt2: '艺考'},
           {image: require('../../assets/img/home-page/chuanmeiyikao.png'), txt1: '传媒', txt2: '艺考'},
-          {image: require('../../assets/img/home-page/art-exam-qa.png'), txt1: '艺考', txt2: 'Q&A'},
-          {image: require('../../assets/img/home-page/zhongkaotechangsheng.png'), txt1: '中考美术', txt2: '特长生'}
+          {image: require('../../assets/img/home-page/art-test.png'), txt1: '美术', txt2: '艺考'},
+          {image: require('../../assets/img/home-page/zhongkaotechangsheng.png'), txt1: '中考美术', txt2: '特长生'},
+          {image: require('../../assets/img/home-page/art-exam-qa.png'), txt1: 'Coming', txt2: 'Soon'}
         ],
         showExamTxtVal: [{val: false}, {val: false}, {val: false}, {val: false}]
       }

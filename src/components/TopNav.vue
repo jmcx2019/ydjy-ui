@@ -108,8 +108,8 @@
           {id: 'middle', routeName: 'ArtExamMiddle', pageName: '中考美术特长生'}
         ],
         trainClassInfo: [
-          {id: 'art', routeName: 'TrainClassArt', pageName: '美术培训'},
-          {id: 'media', routeName: 'TrainClassMedia', pageName: '传媒培训'}
+          {id: 'media', routeName: 'TrainClassMedia', pageName: '传媒培训'},
+          {id: 'art', routeName: 'TrainClassArt', pageName: '美术培训'}
         ]
       }
     },
