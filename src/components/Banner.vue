@@ -53,4 +53,29 @@
   .div-carousel {
     margin-top: -20px;
   }
+  @media (min-width: 768px) {
+    .md-card-media {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .md-card-media {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .md-card-media {
+      width: 1170px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .md-card-media {
+      width: 1250px;
+    }
+  }
+  @media (min-width: 1328px) {
+    .md-card-media {
+      width: 1310px;
+    }
+  }
 </style>
