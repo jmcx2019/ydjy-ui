@@ -12,9 +12,9 @@
     </div>
 
     <div class="row profile-description">
-      <div class="row profile-name">{{profileDataArr[2].name}} {{profileDataArr[2].position}}</div>
-      <div class="row profile-title">{{profileDataArr[2].title}}</div>
-      <div class="row profile-desc">{{profileDataArr[2].description}}</div>
+      <div class="row profile-name" v-if="profileDataArr[2] != null">{{profileDataArr[2].name}} {{profileDataArr[2].position}}</div>
+      <div class="row profile-title" v-if="profileDataArr[2] != null">{{profileDataArr[2].title}}</div>
+      <div class="row profile-desc" v-if="profileDataArr[2] != null">{{profileDataArr[2].description}}</div>
     </div>
   </div>
 </template>
