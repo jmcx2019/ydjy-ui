@@ -53,7 +53,7 @@
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get('http://localhost/api/v1/student?count=6').then(response => {
+        this.axios.get(process.env.API_URL + 'student?count=6').then(response => {
           if (response.data.code === 1000) {
             this.students = response.data.data.data
             this.students.forEach(function (val) {

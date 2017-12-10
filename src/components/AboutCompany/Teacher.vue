@@ -42,7 +42,7 @@
       },
       fetchData() {
         // Get获取数据
-        this.axios.get('http://localhost/api/v1/teacher').then(response => {
+        this.axios.get(process.env.API_URL + 'teacher').then(response => {
           if (response.data.code === 1000) {
             let data = [{viewImg: ''}], level1 = [], level2 = [], level3 = [], levelNull = []
 

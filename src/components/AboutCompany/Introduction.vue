@@ -43,7 +43,7 @@
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get('http://localhost/api/v1/introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'introduction').then(response => {
           if (response.data.code === 1000) {
             let introductionTxtArr = response.data.data.data[0]
             this.summary = introductionTxtArr.summary

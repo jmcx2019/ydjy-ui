@@ -14,12 +14,15 @@
                @mouseleave="showExamTxt(index)">
 
             <div class="art-exam-div-title" v-show="showExamTxtVal[index].val">
-              <div class="art-exam-div-name">
-                <div class="art-exam-div-txt">
-                  <div>{{artExamItem.txt1}}</div>
-                  <div>{{artExamItem.txt2}}</div>
+              <router-link
+                :to="{name: artExamInfo[index].routeName, query: {id: artExamInfo[index].id, name: artExamInfo[index].pageName, child: 0}}">
+                <div class="art-exam-div-name">
+                  <div class="art-exam-div-txt">
+                    <div>{{artExamItem.txt1}}</div>
+                    <div>{{artExamItem.txt2}}</div>
+                  </div>
                 </div>
-              </div>
+              </router-link>
             </div>
 
           </div>
@@ -40,6 +43,12 @@
           {image: require('../../assets/img/home-page/art-test.png'), txt1: '美术', txt2: '艺考'},
           {image: require('../../assets/img/home-page/zhongkaotechangsheng.png'), txt1: '中考美术', txt2: '特长生'},
           {image: require('../../assets/img/home-page/art-exam-qa.png'), txt1: 'Coming', txt2: 'Soon'}
+        ],
+        artExamInfo: [
+          {id: 'media', routeName: 'ArtExamMedia', pageName: '传媒艺考'},
+          {id: 'art', routeName: 'ArtExamArt', pageName: '美术艺考'},
+          {id: 'middle', routeName: 'ArtExamMiddle', pageName: '中考美术特长生'},
+          {id: '', routeName: 'HomePage', pageName: ''}
         ],
         showExamTxtVal: [{val: false}, {val: false}, {val: false}, {val: false}]
       }
@@ -79,6 +88,9 @@
     margin: 0 auto 10px;
     text-align:center;
     background-color: rgba(100, 69, 145, 0.8);
+  }
+  .art-exam-div-title > a:hover {
+    text-decoration: none;
   }
   .art-exam-div-name {
     height: 80px;

@@ -103,7 +103,7 @@
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get('http://localhost/api/v1/intelligence?count=6').then(response => {
+        this.axios.get(process.env.API_URL + 'intelligence?count=6').then(response => {
           if (response.data.code === 1000) {
             this.newsList = response.data.data.data
             this.newsList.forEach(function (val) {

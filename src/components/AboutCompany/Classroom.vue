@@ -32,7 +32,7 @@
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get('http://localhost/api/v1/classroom').then(response => {
+        this.axios.get(process.env.API_URL + 'classroom').then(response => {
           if (response.data.code === 1000) {
             this.classrooms = response.data.data.data
 
