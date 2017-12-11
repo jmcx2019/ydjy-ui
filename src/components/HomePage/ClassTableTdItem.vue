@@ -1,22 +1,22 @@
 <template>
-  <tr>
-    <td class="td-title" v-if="tableItem != null">{{tableItem.name}}</td>
+  <tr v-if="tableItem != null">
+    <td class="td-title">{{tableItem.name}}</td>
     <td class="td-interval"></td>
     <td class="td-content">
       <div class="td-div">
-        <div class="td-div-table-view" v-if="tableItem != null">{{tableItem.description}}</div>
+        <div class="td-div-table-view">{{tableItem.description}}</div>
       </div>
     </td>
     <td class="td-interval"></td>
     <td class="td-content">
       <div class="td-div">
-        <div class="td-div-table-view" v-if="tableItem != null">{{tableItem.content}}</div>
+        <div class="td-div-table-view">{{tableItem.content}}</div>
       </div>
     </td>
     <td class="td-interval"></td>
-    <td class="td-content" v-if="tableItem != null">{{tableItem.semester}}个月</td>
+    <td class="td-content">{{tableItem.semester}}个月</td>
     <td class="td-interval"></td>
-    <td class="td-content" v-if="tableItem != null">{{tableItem.fee}}元</td>
+    <td class="td-content">{{tableItem.fee}}元</td>
     <td class="td-interval"></td>
   </tr>
 </template>
