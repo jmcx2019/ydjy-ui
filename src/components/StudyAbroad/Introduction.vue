@@ -1,14 +1,14 @@
 <template>
   <div id="introduction">
-    <div class="row ae-media-row">
-      <div class="ae-media-pic-div">
+    <div class="row sa-introduction-row">
+      <div class="sa-introduction-pic-div">
         <img :src="bgImg">
       </div>
 
-      <div class="ae-media-view-data" v-for="(vd,index) in viewData">
-        <div class="ae-media-view-data-name">{{vd.name}}</div>
-        <div class="ae-media-view-data-txt"
-             :class="index===(viewData.length-1) ? 'ae-media-last-view-data-txt' : ''">{{vd.txt}}</div>
+      <div class="sa-introduction-view-data" v-for="(vd,index) in viewData">
+        <div class="sa-introduction-view-data-name">{{vd.name}}</div>
+        <div class="sa-introduction-view-data-txt"
+             :class="index===(viewData.length-1) ? 'sa-introduction-last-view-data-txt' : ''">{{vd.txt}}</div>
       </div>
     </div>
   </div>
@@ -47,25 +47,25 @@
 </script>
 
 <style>
-  .ae-media-row {
+  .sa-introduction-row {
     min-height: 526px;
     background-color: #f8f8f8;
   }
-  .ae-media-pic-div {
+  .sa-introduction-pic-div {
     padding: 30px;
   }
-  .ae-media-pic-div > img {
+  .sa-introduction-pic-div > img {
     height: 100%;
     width: 100%;
   }
 
-  .ae-media-view-data {
+  .sa-introduction-view-data {
     margin: 0 30px 22px 30px;
   }
-  .ae-media-view-data-name {
+  .sa-introduction-view-data-name {
     color: #644591;
   }
-  .ae-media-last-view-data-txt {
+  .sa-introduction-last-view-data-txt {
     margin-bottom: 56px;
   }
 </style>

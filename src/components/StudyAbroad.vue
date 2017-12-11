@@ -27,6 +27,8 @@
   import TopNav from './TopNav'
   import LeftNav from "./Public/LeftNav"
   import StudyAbroadIntroduction from "./StudyAbroad/Introduction"
+  import StudyAbroadAdvantage from "./StudyAbroad/Advantage"
+  import StudyAbroadCountry from "./StudyAbroad/Country"
 
   export default {
     name: 'StudyAbroad',
@@ -47,7 +49,9 @@
     components: { // 引入子组件
       TopNav,
       LeftNav,
-      StudyAbroadIntroduction
+      StudyAbroadIntroduction,
+      StudyAbroadAdvantage,
+      StudyAbroadCountry
     }
   }
 </script>

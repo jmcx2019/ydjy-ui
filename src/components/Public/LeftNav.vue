@@ -2,7 +2,7 @@
   <div id="left-nav">
     <div class="row nav-item-div" v-for="(navItem,index) in navList">
 
-      <router-link :to="{name: navItem.routeName, query:{id: navItem.id, name: navItem.pageName}}"
+      <router-link :to="{name: navItem.routeName, query:{id: navItem.id, name: navItem.pageName, child: index}}"
                    v-if="navParams==null">
         <div class="select-list"
              v-bind:class="[navItem.pageName === clicked ? 'selected-bg' : 'unselected-bg']">
@@ -10,7 +10,7 @@
         </div>
       </router-link>
 
-      <router-link :to="{name: navParams.routeName, query:{id: navParams.id, name: navParams.pageName, child:index}}"
+      <router-link :to="{name: navParams.routeName, query:{id: navParams.id, name: navParams.pageName, child: index}}"
                    v-if="navParams!=null">
         <div class="select-list"
              v-bind:class="[navItem.pageName === clicked ? 'selected-bg' : 'unselected-bg']">

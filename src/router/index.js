@@ -165,6 +165,22 @@ export default new Router({
         {
           path: 'advantage',
           name: 'StudyAbroadAdvantage'
+        },
+        {
+          path: 'country',
+          name: 'StudyAbroadCountry'
+        },
+        {
+          path: 'art',
+          name: 'StudyAbroadArt'
+        },
+        {
+          path: 'exchange',
+          name: 'StudyAbroadExchange'
+        },
+        {
+          path: 'training',
+          name: 'StudyAbroadTraining'
         }
       ]
     }
