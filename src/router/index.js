@@ -156,7 +156,17 @@ export default new Router({
     {
       path: '/study-abroad',
       name: 'StudyAbroad',
-      component: StudyAbroad
+      component: StudyAbroad,
+      children: [
+        {
+          path: 'introduction',
+          name: 'StudyAbroadIntroduction'
+        },
+        {
+          path: 'advantage',
+          name: 'StudyAbroadAdvantage'
+        }
+      ]
     }
   ]
 })

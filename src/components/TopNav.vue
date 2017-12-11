@@ -69,7 +69,10 @@
             <li v-bind:class="[(clicked === navInfo[4].clickedVal ) ? 'active' : '']"><a @click="toLearningProgress">{{navInfo[4].name}}</a>
             </li>
 
-            <li v-bind:class="[(clicked === navInfo[5].clickedVal ) ? 'active' : '']"><a @click="toStudyAbroad">{{navInfo[5].name}}</a>
+            <li v-bind:class="[(clicked === navInfo[5].clickedVal ) ? 'active' : '']">
+              <router-link :to="{name: 'StudyAbroadIntroduction', query: {id: 'Introduction', child: 0}}">
+                {{navInfo[5].name}}
+              </router-link>
             </li>
 
           </ul>
