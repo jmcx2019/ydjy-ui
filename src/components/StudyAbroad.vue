@@ -4,7 +4,7 @@
 
     <div class="container">
       <div class="row bread-crumbs">
-        <span>艺术升学</span>
+        <span>留学游学</span>
         <span>&nbsp;&nbsp;>&nbsp;&nbsp;</span>
         <span>{{studyAbroadInfo[$route.query.child].pageName}}</span>
       </div>
@@ -29,6 +29,9 @@
   import StudyAbroadIntroduction from "./StudyAbroad/Introduction"
   import StudyAbroadAdvantage from "./StudyAbroad/Advantage"
   import StudyAbroadCountry from "./StudyAbroad/Country"
+  import StudyAbroadArt from "./StudyAbroad/Art"
+  import StudyAbroadExchange from "./StudyAbroad/Exchange"
+  import StudyAbroadTraining from "./StudyAbroad/Training"
 
   export default {
     name: 'StudyAbroad',
@@ -51,11 +54,22 @@
       LeftNav,
       StudyAbroadIntroduction,
       StudyAbroadAdvantage,
-      StudyAbroadCountry
+      StudyAbroadCountry,
+      StudyAbroadArt,
+      StudyAbroadExchange,
+      StudyAbroadTraining
     }
   }
 </script>
 
 <style>
-
+  .bread-crumbs {
+    margin-top: 24px;
+    color: #868686;
+    font-size: 11px;
+    padding-left: 15px;
+  }
+  .art-exam-content {
+    margin-top: 20px;
+  }
 </style>

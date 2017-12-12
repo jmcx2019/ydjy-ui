@@ -24,9 +24,8 @@
     data() {
       return {
         bgImgUrl: require('../../assets/img/study-abroad/advantage-bg.png'),
-        iconImgUrl: require('../../assets/img/art-exam/art-advantage-icon.png'),
-        content: '通过参加美术高考，学生可以考取全国有开设美术类专业的本科以上院校，2017年广东美术专' +
-        '业录取分数线比同批次普通高考录取分数平均低了200分。'
+        iconImgUrl: require('../../assets/img/study-abroad/advantage-icon.png'),
+        content: '国外艺术氛围浓厚，先进的艺术理论，强调实践的课程，语言要求相对较低，就业前景较好！'
       }
     },
     methods: {
