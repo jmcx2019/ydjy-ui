@@ -3,10 +3,7 @@
     <div class="art-exam-middle-introduction-div">
       <img class="art-exam-middle-introduction-bg" :src="bgImgUrl">
       <div class="art-exam-middle-introduction-content">
-        <div class="art-exam-middle-introduction-txt">
-          <b class="art-exam-middle-introduction-txt-name">{{viewData.name}}</b>
-          {{viewData.txt}}
-        </div>
+        <div class="art-exam-middle-introduction-txt" v-html="viewData.content"></div>
       </div>
       <img class="art-exam-middle-introduction-icon" :src="iconImgUrl">
     </div>
@@ -28,18 +25,15 @@
       return {
         bgImgUrl: require('../../../assets/img/art-exam/middle-introduciton-bg.png'),
         iconImgUrl: require('../../../assets/img/art-exam/middle-introduciton-icon.png'),
-        viewData: {
-          name: '初中美术特长生考试',
-          txt: '，即通过美术艺术特长考取所在地有招收美术特长生计划的高中的艺术专项考试。'
-        }
+        viewData: {content:''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=11').then(response => {
           if (response.data.code === 1000) {
-            let introductionTxtArr = response.data.data.data[0]
+            this.viewData = response.data.data
           }
         })
       }
@@ -73,9 +67,6 @@
     height: 25%;
     color: white;
     line-height: 30px;
-  }
-  .art-exam-middle-introduction-txt-name {
-    color: #b2cc49;
   }
   .art-exam-middle-introduction-icon {
     position: absolute;

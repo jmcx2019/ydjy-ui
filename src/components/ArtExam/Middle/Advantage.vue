@@ -3,7 +3,7 @@
     <div class="art-exam-middle-advantage-div">
       <img class="art-exam-middle-advantage-bg" :src="bgImgUrl">
       <div class="art-exam-middle-advantage-content">
-        <div class="art-exam-middle-advantage-txt">{{content}}</div>
+        <div class="art-exam-middle-advantage-txt" v-html="viewData.content"></div>
       </div>
       <img class="art-exam-middle-advantage-icon" :src="iconImgUrl">
     </div>
@@ -25,16 +25,15 @@
       return {
         bgImgUrl: require('../../../assets/img/art-exam/art-advantage-bg.png'),
         iconImgUrl: require('../../../assets/img/art-exam/art-advantage-icon.png'),
-        content: '对于通过参加美术艺术特长生考试，学生可以考取全市有开设美术专业班的高中学校，对于获得美术特长生报考资格的考生，' +
-        '在六大校录取时，其学业考试成绩总分原则上不低于600分;在除六大校外其他学校录取时，其学业考试成绩总分原则上不低于480分。'
+        viewData: {content:''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=12').then(response => {
           if (response.data.code === 1000) {
-            let introductionTxtArr = response.data.data.data[0]
+            this.viewData = response.data.data
           }
         })
       }
