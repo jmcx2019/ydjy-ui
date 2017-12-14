@@ -3,7 +3,7 @@
     <div class="art-exam-art-advantage-div">
       <img class="art-exam-art-advantage-bg" :src="bgImgUrl">
       <div class="art-exam-art-advantage-content">
-        <div class="art-exam-art-advantage-txt">{{content}}</div>
+        <div class="art-exam-art-advantage-txt" v-html="viewData.content"></div>
       </div>
       <img class="art-exam-art-advantage-icon" :src="iconImgUrl">
     </div>
@@ -25,16 +25,15 @@
       return {
         bgImgUrl: require('../../../assets/img/art-exam/art-advantage-bg.png'),
         iconImgUrl: require('../../../assets/img/art-exam/art-advantage-icon.png'),
-        content: '通过参加美术高考，学生可以考取全国有开设美术类专业的本科以上院校，2017年广东美术专' +
-        '业录取分数线比同批次普通高考录取分数平均低了200分。'
+        viewData: {content:''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=8').then(response => {
           if (response.data.code === 1000) {
-            let introductionTxtArr = response.data.data.data[0]
+            this.viewData = response.data.data
           }
         })
       }

@@ -3,7 +3,7 @@
     <div class="art-exam-art-university-div">
       <img class="art-exam-art-university-bg" :src="bgImgUrl">
       <div class="art-exam-art-university-content">
-        <div class="art-exam-art-university-txt">{{content}}</div>
+        <div class="art-exam-art-university-txt" v-html="viewData.content"></div>
       </div>
       <img class="art-exam-art-university-icon" :src="iconImgUrl">
     </div>
@@ -25,15 +25,15 @@
       return {
         bgImgUrl: require('../../../assets/img/art-exam/art-university-bg.png'),
         iconImgUrl: require('../../../assets/img/art-exam/art-university-icon.png'),
-        content: '中央美术学院、中国美术学院、清华大学美术学院、四川美术学院、鲁迅美术学院、广州美术学院、天津美术学院、西安美术学院、湖北美术学院等。'
+        viewData: {content:''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=10').then(response => {
           if (response.data.code === 1000) {
-            let introductionTxtArr = response.data.data.data[0]
+            this.viewData = response.data.data
           }
         })
       }

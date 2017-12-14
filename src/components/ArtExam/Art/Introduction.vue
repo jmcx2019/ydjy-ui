@@ -3,10 +3,7 @@
     <div class="art-exam-art-introduction-div">
       <img class="art-exam-art-introduction-bg" :src="bgImgUrl">
       <div class="art-exam-art-introduction-content">
-        <div class="art-exam-art-introduction-txt">
-          <b class="art-exam-art-introduction-txt-name">{{viewData.name}}</b>
-          {{viewData.txt}}
-        </div>
+        <div class="art-exam-art-introduction-txt" v-html="viewData.content"></div>
       </div>
       <img class="art-exam-art-introduction-icon" :src="contentImgUrl">
     </div>
@@ -28,20 +25,15 @@
       return {
         bgImgUrl: require('../../../assets/img/art-exam/art-introduction-bg.png'),
         contentImgUrl: require('../../../assets/img/art-exam/art-introduction-icon.png'),
-        viewData: {
-          name: '美术艺考',
-          txt: '即通过美术相关专业报考全国各大院校的艺术高考形式，考试分为美术联考和美术校考，' +
-            '考试科目主要包括色彩、速写、素描三大内容。目前全国开设美术专业的高校数量多达千余所，旨在为国内外' +
-          '培养出更多在美学方面的精英人才。'
-        }
+        viewData: {content:''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'advantage').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=7').then(response => {
           if (response.data.code === 1000) {
-            let advantageTxtArr = response.data.data.data[0]
+            this.viewData = response.data.data
           }
         })
       }
@@ -74,9 +66,6 @@
     height: 45%;
     color: white;
     line-height: 30px;
-  }
-  .art-exam-art-introduction-txt-name {
-    color: #b2cc49;
   }
   .art-exam-art-introduction-icon {
     position: absolute;
