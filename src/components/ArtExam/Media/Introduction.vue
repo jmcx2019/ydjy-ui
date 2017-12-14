@@ -3,7 +3,7 @@
     <div class="art-exam-media-introduction-div">
       <img class="art-exam-media-introduction-bg" :src="bgImgUrl">
       <div class="art-exam-media-introduction-content">
-        <div class="art-exam-media-introduction-txt">{{content}}</div>
+        <div class="art-exam-media-introduction-txt" v-html="introductionTxtArr.content"></div>
       </div>
       <img class="art-exam-media-introduction-icon" :src="iconImgUrl">
     </div>
@@ -25,17 +25,15 @@
       return {
         bgImgUrl: require('../../../assets/img/art-exam/media-introduction-bg.png'),
         iconImgUrl: require('../../../assets/img/art-exam/media-introduction-icon.png'),
-        content: '传媒类专业是我国各大高校为适应快速发展的传媒行业，面向广播、电影、电视、网络、会展、广告' +
-        '出版等媒体行业及企业、培养高层次专业人才开设的新兴学科。传媒艺考即通过传媒专业参加全国各大院校艺术高考' +
-        '，主要包括播音主持类、影视编导类、摄影摄像类、表演空乘类四大专业，与美术、音乐、体育并称高考小四科。'
+        introductionTxtArr: {content: ''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=1').then(response => {
           if (response.data.code === 1000) {
-            let introductionTxtArr = response.data.data.data[0]
+            this.introductionTxtArr = response.data.data
           }
         })
       }

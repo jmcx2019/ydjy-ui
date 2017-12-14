@@ -8,18 +8,17 @@
       <table class="art-exam-media-table" align="center" >
         <tr>
           <td class="art-exam-media-table-tit-td">{{tableTitData[0]}}</td>
-          <td style="width: 30px;"></td>
+          <td class="aem-table-td-hr"></td>
           <td class="art-exam-media-table-tit-td">{{tableTitData[1]}}</td>
-          <td style="width: 30px;"></td>
+          <td class="aem-table-td-hr"></td>
           <td class="art-exam-media-table-tit-td">{{tableTitData[2]}}</td>
         </tr>
         <tr v-for="tdItem in tableData">
           <td class="art-exam-media-table-data-td art-exam-media-table-first-data-td">{{tdItem.name}}</td>
-          <td style="width: 30px;"></td>
+          <td class="aem-table-td-hr"></td>
           <td class="art-exam-media-table-data-td">{{tdItem.first}}</td>
-          <td style="width: 30px;"></td>
+          <td class="aem-table-td-hr"></td>
           <td class="art-exam-media-table-data-td">{{tdItem.second}}</td>
-          <div style="height: 20px;"></div>
         </tr>
       </table>
     </div>
@@ -42,20 +41,15 @@
         bgImgUrl: require('../../../assets/img/art-exam/media-admission-score-bg.png'),
         tableTit: '广东省普通高考文化录取最低控制分数',
         tableTitData: ['科类/批次', '一批（分）', '二批（分）'],
-        tableData: [
-          {name: '文科类（2017）', first: '520', second: '418'},
-          {name: '理科类（2017）', first: '485', second: '360'},
-          {name: '传媒类（2017）', first: '295', second: '250'},
-          {name: '传媒类（2016）', first: '300', second: '250'}
-        ]
+        tableData: [{name: '', first: '', second: ''}]
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'admission-score').then(response => {
+        this.axios.get(process.env.API_URL + 'score').then(response => {
           if (response.data.code === 1000) {
-            let admissionscoreTxtArr = response.data.data.data[0]
+            this.tableData = response.data.data.data
           }
         })
       }
@@ -115,6 +109,10 @@
     height: 28px;
     line-height: 28px;
     background-color: white;
+    margin-bottom: 20px;
+  }
+  .aem-table-td-hr {
+    width: 30px;
   }
   .art-exam-media-table-first-data-td {
     width: 250px;

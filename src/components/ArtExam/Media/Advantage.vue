@@ -28,11 +28,11 @@
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'advantage').then(response => {
-          if (response.data.code === 1000) {
-            let advantageTxtArr = response.data.data.data[0]
-          }
-        })
+        // this.axios.get(process.env.API_URL + 'advantage').then(response => {
+        //   if (response.data.code === 1000) {
+        //     let advantageTxtArr = response.data.data.data[0]
+        //   }
+        // })
       }
     }
   }
