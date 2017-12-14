@@ -3,7 +3,7 @@
     <div class="sa-exchange-div">
       <img class="sa-exchange-bg" :src="bgImgUrl">
       <div class="sa-exchange-content">
-        <div class="sa-exchange-txt">{{content}}</div>
+        <div class="sa-exchange-txt" v-html="viewData.content"></div>
       </div>
     </div>
   </div>
@@ -23,18 +23,15 @@
     data() {
       return {
         bgImgUrl: require('../../assets/img/study-abroad/exchange-bg.png'),
-        content: '国外艺术氛围浓厚，先进的艺术理论，强调实践的课程，语言要求相对较低，就业前景较好！' +
-        '国外艺术氛围浓厚，先进的艺术理论，强调实践的课程，语言要求相对较低，就业前景较好！' +
-        '国外艺术氛围浓厚，先进的艺术理论，强调实践的课程，语言要求相对较低，就业前景较好！' +
-        '国外艺术氛围浓厚，先进的艺术理论，强调实践的课程，语言要求相对较低，就业前景较好！'
+        viewData: {content:''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=20').then(response => {
           if (response.data.code === 1000) {
-            let introductionTxtArr = response.data.data.data[0]
+            this.viewData = response.data.data
           }
         })
       }

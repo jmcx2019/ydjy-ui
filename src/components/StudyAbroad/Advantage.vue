@@ -3,7 +3,7 @@
     <div class="sa-advantage-div">
       <img class="sa-advantage-bg" :src="bgImgUrl">
       <div class="sa-advantage-content">
-        <div class="sa-advantage-txt">{{content}}</div>
+        <div class="sa-advantage-txt" v-html="viewData.content"></div>
       </div>
       <img class="sa-advantage-icon" :src="iconImgUrl">
     </div>
@@ -25,15 +25,15 @@
       return {
         bgImgUrl: require('../../assets/img/study-abroad/advantage-bg.png'),
         iconImgUrl: require('../../assets/img/study-abroad/advantage-icon.png'),
-        content: '国外艺术氛围浓厚，先进的艺术理论，强调实践的课程，语言要求相对较低，就业前景较好！'
+        viewData: {content:''}
       }
     },
     methods: {
       fetchData() {
         // Get获取数据
-        this.axios.get(process.env.API_URL + 'introduction').then(response => {
+        this.axios.get(process.env.API_URL + 'media?id=15').then(response => {
           if (response.data.code === 1000) {
-            let introductionTxtArr = response.data.data.data[0]
+            this.viewData = response.data.data
           }
         })
       }
