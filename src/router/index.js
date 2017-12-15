@@ -139,12 +139,12 @@ export default new Router({
       component: TrainClass,
       children: [
         {
-          path: 'art',
-          name: 'TrainClassArt'
-        },
-        {
           path: 'media',
           name: 'TrainClassMedia'
+        },
+        {
+          path: 'art',
+          name: 'TrainClassArt'
         }
       ]
     },

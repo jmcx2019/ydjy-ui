@@ -1,7 +1,7 @@
 <template>
   <div id="media">
-    <div class="about-company-advantage-div">
-      <img src="../../assets/img/about-company/advantage.png">
+    <div class="train-class-media-div">
+      <img src="../../assets/img/coming-soon.png">
     </div>
   </div>
 </template>
@@ -13,15 +13,12 @@
 </script>
 
 <style>
-  /* start: 背景图按宽高比自适应div的最大宽度，填充图自适应背景图 */
-  .about-company-advantage-div {
+  .train-class-media-div {
     margin: 0 -15px;
-    background: url("../../assets/img/about-company/advantage-bg.png") center no-repeat;
-    background-size: 100%;
   }
-  .about-company-advantage-div > img {
+  .train-class-media-div > img {
     height: 100%;
     width: 100%;
+    display:block;
   }
-  /* end: 背景图按宽高比自适应div的最大宽度，填充图自适应背景图 */
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div id="learning-progress">
     <top-nav :clicked="clickedVal"></top-nav>
+
+    <div class="container">
+      <img style="display: block; width: 100%; height: 100%;" src="../assets/img/coming-soon.png">
+    </div>
   </div>
 </template>
 

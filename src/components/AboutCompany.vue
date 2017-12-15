@@ -24,7 +24,7 @@
 <script>
   // 引入子组件
   import TopNav from './TopNav'
-  import LeftNav from "./Public/LeftNav.vue"
+  import LeftNav from "./Public/LeftNav"
   import Introduction from "./AboutCompany/Introduction"
   import Advantage from "./AboutCompany/Advantage"
   import Teacher from "./AboutCompany/Teacher"
