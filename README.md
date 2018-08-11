@@ -2,6 +2,7 @@
 
 官方网站前端UI，使用Vue-JS实现。
 
+[网站链接](http://www.yidongedu.cn)
 
 ![Logo](Logo.png)
 
