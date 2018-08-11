@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row acci-contact">
         <img src="../../assets/img/about-company/contact-phone.png">
         <p class="about-company-contact-info-p-title">联系方式</p>
         <p class="about-company-contact-info-p-phone">0769-22667466 / 18126818262 / 18025214797</p>
@@ -59,8 +59,11 @@
     color: #644591;
   }
   .about-company-contact-info-p-title-2 {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 13px;
     color: #644591;
+  }
+  .acci-contact {
+    margin-top: 30px;
   }
 </style>

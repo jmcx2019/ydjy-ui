@@ -50,9 +50,6 @@
 </script>
 
 <style>
-  .div-carousel {
-    margin-top: -20px;
-  }
   @media (min-width: 768px) {
     .md-card-media {
       width: 750px;

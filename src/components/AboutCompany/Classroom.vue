@@ -37,7 +37,7 @@
             this.classrooms = response.data.data.data
 
             for (let i = 0, length = this.classrooms.length; i < length; i++) {
-              this.classrooms[i].viewImg = 'http://localhost/uploads/' + this.classrooms[i].image
+              this.classrooms[i].viewImg = process.env.IMG_URL + this.classrooms[i].image
               if (this.classrooms[i].location === '东莞校区') {
                 this.classrooms[i].viewMark = this.location.dg
               } else {

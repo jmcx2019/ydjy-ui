@@ -48,7 +48,7 @@
 
             data = response.data.data.data
             for (let i = 0, length = data.length; i < length; i++) {
-              data[i].viewImg = 'http://localhost/uploads/' + data[i].avatar
+              data[i].viewImg = process.env.IMG_URL + data[i].avatar
               if (data[i].view_level === '1') {
                 level1.push(data[i])
               } else if (data[i].view_level === '2') {

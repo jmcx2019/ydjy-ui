@@ -1,12 +1,13 @@
 <template>
   <div id="top-nav">
-    <div class="top-slogan">
-      <div class="container">
-        <span class="span-slogan pull-right">艺动教育 您艺术升学之路的实力护航者</span>
-      </div>
-    </div>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="top-slogan">
+        <div class="container">
+          <span class="span-slogan pull-right">艺动教育 您艺术升学之路的实力护航者</span>
+        </div>
+      </div>
+
       <div class="container">
 
         <div class="navbar-header logo">
@@ -80,6 +81,7 @@
 
       </div>
     </nav>
+    <div class="navbar-div"></div>
   </div>
 </template>
 
@@ -133,6 +135,9 @@
 <style>
   .top-slogan {
     height: 34px;
+    background-color: white;
+    color: #5f488c;
+    border: 0;
   }
 
   .span-slogan {
@@ -166,6 +171,7 @@
   /* 导航区域 start */
   .navbar {
     border-radius: 0;
+    border: 0;
   }
 
   .navbar-nav ul {
@@ -195,6 +201,9 @@
     background-color: #5f488c;
   }
 
+  .navbar-div {
+    height: 90px;
+  }
   /* 导航区域 end */
 
   /*下拉菜单 start*/

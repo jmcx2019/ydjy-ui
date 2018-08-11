@@ -46,7 +46,7 @@
           if (response.data.code === 1000) {
             this.teachers = response.data.data.data
             this.teachers.forEach(function (val) {
-              val.img = 'http://localhost/uploads/' + val.avatar
+              val.img = process.env.IMG_URL + val.avatar
             })
           }
         })

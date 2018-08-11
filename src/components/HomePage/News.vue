@@ -107,7 +107,7 @@
           if (response.data.code === 1000) {
             this.newsList = response.data.data.data
             this.newsList.forEach(function (val) {
-              val.img = 'http://localhost/uploads/' + val.focus_img_url
+              val.img = process.env.IMG_URL + val.focus_img_url
             })
 
             // TODO： 临时代码

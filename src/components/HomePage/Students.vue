@@ -57,7 +57,7 @@
           if (response.data.code === 1000) {
             this.students = response.data.data.data
             this.students.forEach(function (val) {
-              val.viewImg = 'http://localhost/uploads/' + val.image
+              val.viewImg = process.env.IMG_URL + val.image
               val.name = '学员姓名'
               val.school = '学校名称'
               val.profession = '专业名称'
